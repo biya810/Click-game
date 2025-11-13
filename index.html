@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリックカウンター</title>
+  <link rel="stylesheet" href="Click game.css">
+</head>
+
+<body>
+  <p id="midasi">バージョン2</p> <!-- 見出し -->
+
+
+  <!-- サブコンテナ -->
+  <div id="subcontainer" class="container">
+    <button id="subcontainer-text">ショップ</button>
+    <button id="subcontainer-game">ミニゲーム</button>
+  </div>
+  <!-- サブコンテナ -->
+
+
+  <!-- メインコンテナ -->
+  <div id="Main-Container" class="container">
+    <h1>クリックカウンター</h1>
+    <p>クリック回数: <span id="count">0</span></p>
+    <p>クリックパワー: <span id="click-power">1</span></p>
+    <button id="my-button">クリックしてね</button>
+    <button id="reborn-button">リボーン！</button>
+  </div>
+  <!-- メインコンテナ -->
+
+
+  <!-- モーダル -->
+  <div id="modal" class="modal hidden">
+    <p id="modal-text"></p>
+    <button id="modal-ok">OK</button>
+    <button id="modal-cancel">キャンセル</button>
+  </div>
+  <!-- モーダル -->
+
+
+
+  <!-- ショップモーダル -->
+  <div id="modal-shop" class="hidden">
+    <p id="modal-shop-text"></p>
+    <button id="shop-one">自動クリック<span id="nanshop-one">0</span></button>
+    <button id="modal-shop-close">閉じる</button>
+  </div>
+  <!-- ショップモーダル -->
+
+
+</body>
+<script src="Click game.js" defer></script>
+
+</html>
