@@ -167,7 +167,7 @@ button:hover {
 
   /* サブコンテナを横幅いっぱいに */
   #subcontainer {
-    position: relative;
+    position: absolute;
     /* 固定解除 */
     width: 90%;
     /* 画面に合わせる */
