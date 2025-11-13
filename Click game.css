@@ -178,15 +178,14 @@ button:hover {
   }
 
   /* メインコンテナを横幅いっぱいに */
-  #Main-Container {
+#Main-Container {
     width: 300px;
-    position: relative;
-    /* positionをrelativeに設定 */
-    top: 1px;
-    /* これでtopプロパティが機能する */
+    /* positionの指定を削除するか、relative（デフォルト）にする */
+    margin-top: 100px; /* 上からの余白を指定 */
     margin-left: auto;
     margin-right: auto;
-  }
+    /* またはショートハンドで margin: 100px auto 0; */
+}
 
   /* 見出しの調整 */
   #midasi {
