@@ -20,9 +20,9 @@ let modalShop = document.getElementById('modal-shop');
 let modalShopText = document.getElementById('modal-shop-text');
 
 
-let wakaran = document.getElementById('modal-mouyokuwakannai');
-let warningModal = document.getElementById('modal-mouyokuwakannai');
-let warningClose = document.getElementById('warning-close');
+let keikoku = document.getElementById('modal-keikoku');
+let keikokuclose = document.getElementById('modal-keikoku-close');
+let shopOkKaunto = document.getElementById('shop-ok-kaunto');
 
 //　クリックパワーを定義
 clickPower = 1;
@@ -51,11 +51,12 @@ rebornButton.addEventListener('click', function () {
   modal.classList.remove('hidden');
 });
 
-// ショップボタンをクリックでモーダルを表示
+//ショップモーダル表示
 shopButton.addEventListener('click', function () {
   modalShop.classList.remove('hidden'); // 表示
   modalShopText.textContent = "ショップを開きました！"; // テキスト更新
 });
+//ショップモーダル表示
 
 // OKボタン
 modalOk.addEventListener('click', function () {
@@ -76,44 +77,62 @@ modalCancel.addEventListener('click', function () {
   modal.classList.add('hidden');
 });
 
+// キャンセル
+keikokuclose.addEventListener('click', function () {
+  keikoku.classList.add('hidden');
+});
 
 
+
+//ショップキャンセルボタン
 let modalShopClose = document.getElementById('modal-shop-close');
 modalShopClose.addEventListener('click', function () {
   modalShop.classList.add('hidden'); // 非表示
 });
+//ショップキャンセルボタン
 
+let kounyuukaunnto = 0
 
-let shopok = document.getElementById('shop-ok');
-shopok.addEventListener('click', function () {
+// 自動クリックパワーを保持
+let autoClickPower = 0;
+
+let autoClickInterval; // 自動クリック用 interval ID
+
+let shopok1 = document.getElementById('shop-ok1');
+shopok1.addEventListener('click', function () {
   const cost = 10;
 
   if (count < cost) {
     // 足りない場合
     let remaining = cost - count;
-    document.getElementById('kounyuumadenokurikkusuu').textContent = remaining;
-    wakaran.classList.remove('hidden-mouyokuwakannai'); // 警告表示
+    document.getElementById('tarinai').textContent = remaining;
+    modalShop.classList.add('hidden'); // ショップモーダル非表示
+    keikoku.classList.remove('hidden'); // 警告表示
     return;
   }
 
+  autoClickPower++; // クリック回数に応じてパワーアップ
   // 足りている場合
   count -= cost;
   countDisplay.textContent = count;
 
-  // 自動クリック開始
+  // 自動クリック開始（まだ開始してなければ）
   if (!autoClickInterval) {
-    autoClickInterval = setInterval(function () {
-      count += 1;
+    autoClickInterval = setInterval(() => {
+      count += autoClickPower;         // 回数分だけカウントを増やす
       countDisplay.textContent = count;
     }, 1000);
   }
 
-  shoponeCount++;
-  nanshopone.textContent = shoponeCount;
 
-  // ここでショップモーダルを閉じる
-  modalShop.classList.add('hidden-shop');
+
+  kounyuukaunnto++;
+  shopOkKaunto.textContent = kounyuukaunnto;
+
 });
+
+
+
 
 
 
