@@ -41,8 +41,8 @@ h1 {
   margin-bottom: 5px;
   color: #333333;
 }
-
 /* テキスト設定 */
+
 
 /* テキスト設定 */
 p {
@@ -75,16 +75,15 @@ p {
   width: 150px;
   height: 400px;
 }
-
 /* サブコンテナ */
 
-
+/* メインコンテナ */
 #Main-Container {
   width: 300px;
   margin-top: 100px;
   /* 上から少し下げる */
 }
-
+/* メインコンテナ */
 
 
 /* ボタン共通 */
@@ -99,8 +98,8 @@ button {
   transition: all 0.2s ease;
   margin: 5px;
 }
-
 /* ボタン共通 */
+
 
 /* ボタンホバー時 */
 button:hover {
@@ -108,8 +107,8 @@ button:hover {
   color: #ffffff;
   border-color: #333333;
 }
-
 /* ボタンホバー時 */
+
 
 /* モーダル全体 */
 .modal {
@@ -123,25 +122,33 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
-
 /* モーダル全体 */
 
-/* モーダル中央のボックス */
-.modal-content {
-  background-color: white;
-  padding: 30px 50px;
-  border-radius: 15px;
-  text-align: center;
-}
 
 /* モーダル中央のボックス */
+.modal-containe {
+  display: flex;           /* Flexbox にする */
+  flex-direction: column;  /* 縦並びにする */
+  align-items: center;     /* 横方向を中央揃えにする */
+  justify-content: center; /* 縦方向も中央揃えにする（必要に応じて） */
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 500px;            /* 適度な幅 */
+  max-width: 90%;          /* 画面幅に合わせて縮小可能 */
+  box-sizing: border-box;
+  text-align: center;      /* テキストも中央揃え */
+}
+/* モーダル中央のボックス */
+
 
 /* 最初は非表示 */
 .hidden {
   display: none;
 }
-
 /* 最初は非表示 */
+
+
 
 /* モーダル全体 */
 .modal-shop {
@@ -155,8 +162,8 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
-
 /* モーダル全体 */
+
 
 /* スマホ用：画面幅600px以下の場合 */
 @media screen and (max-width: 600px) {
@@ -175,7 +182,7 @@ button:hover {
     transform: translateX(-50%);
     top: auto;
     width: 200px;
-    height: 30px;
+    height: 70px;
   }
 
   /* メインコンテナを横幅いっぱいに */

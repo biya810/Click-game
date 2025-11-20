@@ -1,7 +1,7 @@
-let count = 0;
+let count = 0; //クリック数
 let clickPower = 1; // 1クリックで増える量
 let rebornIndex = 0; // 現在のリボーン回数
-let rebornThresholds = [100, 300, 500, 900, 1500];
+let rebornThresholds = [100, 300, 900, 1800];
 
 let countDisplay = document.getElementById('count');
 let clickPowerDisplay = document.getElementById('click-power');
@@ -12,22 +12,23 @@ let modal = document.getElementById('modal');
 let modalText = document.getElementById('modal-text');
 let modalOk = document.getElementById('modal-ok');
 let modalCancel = document.getElementById('modal-cancel');
+let modalcontaine = document.getElementById('modal-containe');
 
 // ショップモーダル用の変数
-let shopButton = document.getElementById('shop-text');
+let shopButton = document.getElementById('subcontainer-shop-button');
 let modalShop = document.getElementById('modal-shop');
 let modalShopText = document.getElementById('modal-shop-text');
+
 
 let wakaran = document.getElementById('modal-mouyokuwakannai');
 let warningModal = document.getElementById('modal-mouyokuwakannai');
 let warningClose = document.getElementById('warning-close');
 
-warningClose.addEventListener('click', function () {
-  warningModal.classList.add('hidden-mouyokuwakannai');
-});
+//　クリックパワーを定義
+clickPower = 1;
 
 
-// クリックカウンター
+//　クリックパワーに応じてクリックしたときにカウントが増えカウントによって色が変わる
 myButton.addEventListener('click', function () {
   count += clickPower;
   countDisplay.textContent = count;
@@ -45,7 +46,7 @@ rebornButton.addEventListener('click', function () {
     modalCancel.style.display = "none";
   } else {
     modalText.textContent = `リボーンしますか？（クリックパワー +1）`;
-    modalCancel.style.display = "inline-block";
+    modalCancel.style.display = "block";
   }
   modal.classList.remove('hidden');
 });
@@ -74,6 +75,8 @@ modalOk.addEventListener('click', function () {
 modalCancel.addEventListener('click', function () {
   modal.classList.add('hidden');
 });
+
+
 
 let modalShopClose = document.getElementById('modal-shop-close');
 modalShopClose.addEventListener('click', function () {
