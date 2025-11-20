@@ -142,16 +142,24 @@ button:hover {
 /* モーダル中央のボックス */
 
 
-/* 最初は非表示 */
-.hidden {
-  display: none;
+/* モーダル中央のボックス */
+.container-shop {
+  display: flex;           /* Flexbox にする */
+  flex-direction: column;  /* 縦並びにする */
+  align-items: center;     /* 横方向を中央揃えにする */
+  justify-content: center; /* 縦方向も中央揃えにする（必要に応じて） */
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 500px;            /* 適度な幅 */
+  max-width: 90%;          /* 画面幅に合わせて縮小可能 */
+  box-sizing: border-box;
+  text-align: center;      /* テキストも中央揃え */
 }
-/* 最初は非表示 */
-
-
+/* モーダル中央のボックス */
 
 /* モーダル全体 */
-.modal-shop {
+#modal-shop {
   position: fixed;
   top: 0;
   left: 0;
@@ -163,6 +171,13 @@ button:hover {
   align-items: center;
 }
 /* モーダル全体 */
+
+
+/* 最初は非表示 */
+.hidden {
+  display: none !important;
+}
+/* 最初は非表示 */
 
 
 /* スマホ用：画面幅600px以下の場合 */

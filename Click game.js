@@ -53,7 +53,7 @@ rebornButton.addEventListener('click', function () {
 
 // ショップボタンをクリックでモーダルを表示
 shopButton.addEventListener('click', function () {
-  modalShop.classList.remove('hidden-shop'); // 表示
+  modalShop.classList.remove('hidden'); // 表示
   modalShopText.textContent = "ショップを開きました！"; // テキスト更新
 });
 
@@ -80,10 +80,12 @@ modalCancel.addEventListener('click', function () {
 
 let modalShopClose = document.getElementById('modal-shop-close');
 modalShopClose.addEventListener('click', function () {
-  modalShop.classList.add('hidden-shop'); // 非表示
+  modalShop.classList.add('hidden'); // 非表示
 });
 
-shopone.addEventListener('click', function () {
+
+let shopok = document.getElementById('shop-ok');
+shopok.addEventListener('click', function () {
   const cost = 10;
 
   if (count < cost) {
