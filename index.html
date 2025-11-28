@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>クリックカウンター</title>
-  <link rel="stylesheet" href="Click game.css">
+  <link rel="stylesheet" href="clickgame.css">
 </head>
 
 <body>
@@ -46,7 +46,13 @@
   <div id="modal-shop" class="modal hidden">
     <div id="container-shop" class="container-shop">
       <p id="modal-shop-text"></p>
-      <button id="shop-ok1">自動クリック<span id="shop-ok-kaunto">0</span></button>
+      <div id="shop-ok1-explanation" class="shop-ok1-explanation">
+        <p>秒１クリック</p>
+        <button id="shop-ok1" class="tooltip">自動クリック<span class="tooltip-text">
+            毎秒<span id="shop-ok-kaunto-explanation">0</span>クリック
+          </span>
+        </button>
+      </div>
       <button id="modal-shop-close">閉じる</button>
     </div>
   </div>
@@ -62,7 +68,8 @@
   <!-- 警告モーダル -->
 
 
+
 </body>
-<script src="Click game.js" defer></script>
+<script src="clickgame.js" defer></script>
 
 </html>
