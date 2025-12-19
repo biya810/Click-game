@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリックカウンター</title>
+  <link rel="stylesheet" href="clickgame.css">
+</head>
+
+<body>
+  <p id="midasi">バージョン2</p> <!-- 見出し -->
+
+
+  <!-- サブコンテナ -->
+  <div id="subcontainer" class="container">
+    <button id="subcontainer-shop-button">ショップ</button>
+    <button id="subcontainer-game-button">ミニゲーム</button>
+  </div>
+  <!-- サブコンテナ -->
+
+
+  <!-- メインコンテナ -->
+  <div id="Main-Container" class="container">
+    <h1>クリックカウンター</h1>
+    <p>クリック回数: <span id="count">0</span></p>
+    <p>クリックパワー: <span id="click-power">1</span></p>
+    <button id="my-button">クリックしてね</button>
+    <button id="reborn-button">リボーン！</button>
+  </div>
+  <!-- メインコンテナ -->
+
+
+  <!-- モーダル背景 -->
+  <div id="modal" class="modal hidden">
+    <div id="modal-containe" class="modal-containe">
+      <p id="modal-text"></p>
+      <button id="modal-ok">OK</button>
+      <button id="modal-cancel">キャンセル</button>
+    </div>
+  </div>
+  <!-- モーダル背景 -->
+
+
+  <!-- ショップモーダル -->
+  <div id="modal-shop" class="modal hidden">
+    <div id="container-shop" class="container-shop">
+      <p id="modal-shop-text"></p>
+      <div id="shop-ok1-explanation" class="shop-ok1-explanation">
+        <p>秒１クリック</p>
+        <button id="shop-ok1" class="tooltip">自動クリック<span class="tooltip-text">
+            毎秒<span id="shop-ok-kaunto-explanation">0</span>クリック
+          </span>
+        </button>
+      </div>
+      <button id="modal-shop-close">閉じる</button>
+    </div>
+  </div>
+  <!-- ショップモーダル -->
+
+  <!-- 警告モーダル -->
+  <div id="modal-keikoku" class="modal hidden">
+    <div id="container-keikoku" class="container-keikoku">
+      <p>あと <span id="tarinai">0</span> 回クリックが必要です！</p>
+      <button id="modal-keikoku-close">閉じる</button>
+    </div>
+  </div>
+  <!-- 警告モーダル -->
+
+
+
+</body>
+<script src="clickgame.js" defer></script>
+
+</html>
